@@ -20,7 +20,7 @@ const TaskInput = ({
   return (
     <div>
       <div className="h-[19px] flex text-sm text-gray-600 mb-8" >
-        <button onClick={handleBack} className="text-white">
+        <button onClick={handleBack} className="text-white" type="button">
           <FaArrowLeft size={14} />
         </button>
       </div>

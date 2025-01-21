@@ -89,8 +89,8 @@ export default function AddTask() {
   return (
     <div>
       <Header />
-      <div className="absolute top-[261px] w-full flex justify-center">
-        <div className="flex flex-col w-[736px] gap-[24px] rounded-md">
+      <div className="absolute top-[180px] sm:top-[150px] md:top-[200px] lg:top-[261px] w-full flex justify-center px-4">
+        <div className="flex flex-col w-full max-w-[736px] gap-[16px] sm:gap-[24px] px-4 rounded-md">
           <form onSubmit={handleSubmit}>
             <TaskInput
               colorOptions={colorOptions}
@@ -99,9 +99,9 @@ export default function AddTask() {
               handleColorSelect={handleColorSelect}
               handleBack={handleBack}
             />
-            <div className="flex justify-center items-center rounded-md w-[736px] h-[52px] mt-[48px] bg-[#1E6F9F]">
+            <div className="flex justify-center items-center rounded-md w-full max-w-[736px] h-[52px] mt-[24px] sm:mt-[48px] px-4 bg-[#1E6F9F]">
               <button
-                className="flex justify-center items-center w-[736px] gap-2 text-white text-[14px] font-bold"
+                className="flex justify-center items-center w-full max-w-[736px] gap-2 text-white text-[14px] font-bold"
               >
                 Add Task
               </button>
@@ -117,6 +117,7 @@ export default function AddTask() {
       />
     </div>
   );
+  
 }
 
 

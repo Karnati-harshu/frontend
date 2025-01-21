@@ -86,8 +86,9 @@ export default function EditTask() {
   return (
     <div>
       <Header />
-      <div className="absolute top-[261px] w-full flex justify-center">
-        <form className="flex flex-col w-[736px] gap-[24px] rounded-md" onSubmit={handleSubmit}>
+      {/* Wrapper for the form and handling responsiveness */}
+      <div className="absolute top-[170px] sm:top-[150px] md:top-[200px] lg:top-[261px] w-full flex justify-center px-4 sm:px-6">
+        <form className="flex flex-col w-full max-w-[736px] gap-[16px]" onSubmit={handleSubmit}>
           <TaskInput
             colorOptions={colorOptions}
             task={task}
@@ -95,16 +96,21 @@ export default function EditTask() {
             handleColorSelect={handleColorSelect}
             handleBack={handleBack}
           />
-          <div className="flex justify-center items-center rounded-md w-[736px] h-[52px] mt-[48px] bg-[#1E6F9F]">
-            <button
-              type="submit"
-              className="flex justify-center items-center gap-2 text-white text-[14px] font-bold"
-            >
-              Save Task
-            </button>
+  
+          {/* Save Task Button */}
+          <div className="w-full flex justify-center items-center mt-[24px] sm:mt-[48px]">
+            <div className="w-full flex justify-center items-center max-w-[736px] rounded-md h-[52px] bg-[#1E6F9F]">
+              <button
+                type="submit"
+                className="flex justify-center  w-full gap-2 text-white text-[14px] font-bold"
+              >
+                Save Task
+              </button>
+            </div>
           </div>
         </form>
       </div>
+  
       <ConfirmDialog
         message="You have unsaved changes. Are you sure you want to leave without saving?"
         onConfirm={handleConfirm}
@@ -113,6 +119,7 @@ export default function EditTask() {
       />
     </div>
   );
+  
 }
 
 

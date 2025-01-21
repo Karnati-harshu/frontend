@@ -89,22 +89,22 @@ export default function Home() {
 
   return (
     <div>
-      <Header/>
-
+      <Header />
+  
       <div className="w-full flex justify-center items-center -mt-[26px] relative">
-        <div className="flex justify-center items-center rounded-md w-[736px] h-[52px] bg-[#1E6F9F] mb-10 cursor-pointer" 
-            onClick={() => router.push('/add-task')}>
-          <button
-            className="flex justify-center items-center gap-2 text-white text-[14px] font-bold"
-          >
+        <div
+          className="flex justify-center items-center rounded-md w-full max-w-[736px] h-[52px] bg-[#1E6F9F] mb-10 cursor-pointer mx-4"
+          onClick={() => router.push('/add-task')}
+        >
+          <button className="flex justify-center items-center gap-2 text-white text-[14px] font-bold">
             <span>Create Task</span>
             <IoIosAddCircleOutline size={16} className="text-white mt-[2px]" />
           </button>
         </div>
       </div>
-
-      <div className="mt-8 flex flex-col items-center w-full">
-        <div className="flex justify-between w-[736px] text-sm text-gray-600">
+  
+      <div className="mt-8 flex flex-col items-center w-full px-4">
+        <div className="flex justify-between w-full max-w-[736px] text-sm text-gray-600">
           <p className="text-[#4EA8DE] text-[14px] font-bold">
             Tasks{' '}
             <span className="rounded-xl py-[2px] px-[8px] bg-[#333333] text-white">
@@ -118,17 +118,17 @@ export default function Home() {
             </span>
           </p>
         </div>
-
-        <div className="flex flex-col justify-center items-center p-4 gap-[16px] w-[736px] mt-6">
+  
+        <div className="flex flex-col justify-center items-center p-4 gap-[12px] sm:gap-[16px] w-full max-w-[736px] mt-6">
           {tasks.length === 0 ? (
-            <div className="w-[732px] border-t border-[#333333] flex flex-col justify-center items-center pt-16 gap-3">
+            <div className="w-full border-t border-[#333333] flex flex-col justify-center items-center pt-16 gap-3">
               <span className="text-[#333333] text-[40px]">
                 <CgNotes />
               </span>
-              <p className="text-[#808080] text-[16px] font-bold">
+              <p className="text-[#808080] text-[16px] font-bold text-center">
                 You don&apos;t have any tasks registered yet.
               </p>
-              <p className="text-[#808080] text-[16px] font-semibold">
+              <p className="text-[#808080] text-[16px] font-semibold text-center">
                 Create tasks and organize your to-do items.
               </p>
             </div>
@@ -153,4 +153,4 @@ export default function Home() {
       />
     </div>
   );
-}
+}  

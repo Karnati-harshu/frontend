@@ -3,9 +3,19 @@ import {Task} from '@/app/types/taskInterface'
 
 interface TaskCardProps {
   task: Task;
+  onToggle: () => void;
+  onEdit: () => void;
+  onDelete: () => void;
 }
 
-const TaskCard = ({ task }: TaskCardProps) => {
+const TaskCard = ({ task, onToggle, onEdit, onDelete }: TaskCardProps) => {
+
+  const handleClickText = () => {
+    if (!task.completed) {  
+      onEdit()
+    }
+  }
+
   return (
     <div className="flex flex-col items-center justify-center w-[732px] h-[72px] border border-[#333333] p-[12px] rounded-md bg-[#262626]">
       <div className="flex justify-between items-start w-full m-0">
@@ -14,9 +24,11 @@ const TaskCard = ({ task }: TaskCardProps) => {
             type="checkbox"
             id={`checkbox-${task.id}`}
             checked={task.completed || false}
+            onChange={onToggle}
             className="peer w-[16px] h-[16px] mt-[5px] rounded-full border border-[#4EA8DE] appearance-none focus:outline-none cursor-pointer checked:bg-[#5E60CE] checked:border-[#5E60CE]"
           />
           <span
+            onClick={handleClickText}
             className={`peer-checked:line-through text-white text-[16px] font-semibold break-words peer-checked:text-[#808080] cursor-pointer ${task.completed ? 'line-through' : ''}`}
           >
             {task.title}
@@ -24,6 +36,7 @@ const TaskCard = ({ task }: TaskCardProps) => {
         </div>
 
         <span
+          onClick={onDelete}
           className="text-[#808080] ml-[170px] mr-0 cursor-pointer"
         >
           <RiDeleteBin5Line size={20} />
